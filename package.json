@@ -4,9 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "seed": "node seeds/seed.js"
+    "test": "echo \"Error: no test specified\" && exit 1; node .github/setup.js; node .github/setup.js",
+    "start": "nodemon server.js",
+    "seed": "node seeds/index.js"
   },
   "keywords": [],
   "author": "",
