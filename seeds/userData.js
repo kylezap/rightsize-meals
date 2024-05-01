@@ -6,30 +6,30 @@ const userData = [
         "email": "sal@hotmail.com",
         "password": "password12345",
         "userAge": 20,
-        "isMale": true,
+        "isMale": "male",
         "userWeight":72,
         "userHeight": 175,
-        "userAct": 2
+        "userAct": "level_2"
       },
       {
         "name": "Lernantino",
         "email": "lernantino@gmail.com",
         "password": "password12345",
         "userAge": 25,
-        "isMale": true,
+        "isMale": "male",
         "userWeight":80,
         "userHeight": 180,
-        "userAct": 5
+        "userAct": "level_5"
       },
       {
         "name": "Amiko",
         "email": "amiko2k20@aol.com",
         "password": "password12345",
         "userAge": 23,
-        "isMale": false,
+        "isMale": "male",
         "userWeight":60,
         "userHeight": 160,
-        "userAct": 3
+        "userAct": "level_3"
       },
 ];
 
