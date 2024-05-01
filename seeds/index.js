@@ -9,11 +9,11 @@ const seedAll = async () => {
 
     await seedUsers();
 
-    await seedCalorieData();
+    // await seedCalorieData();
 
-    await seedRecipes();
+    // await seedRecipes();
 
-    await seedUserRecipes()
+    // await seedUserRecipes()
 
     process.exit(0);
 };
