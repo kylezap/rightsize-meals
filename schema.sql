@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS rightSize_db;
+
+CREATE DATABASE rightSize_db;
