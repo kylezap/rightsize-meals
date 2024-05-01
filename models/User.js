@@ -42,7 +42,7 @@ User.init(
         },
         //storing gender as an "isMale" boolean because I can't think of another way to do it
         isMale: {
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         userWeight: {
@@ -62,7 +62,7 @@ User.init(
         // ‘level _ 5’ : “Intense exercise 6-7 times/week”,
         // ‘level _ 6’ : “Very intense exercise daily, or physical job”
         userAct: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         
