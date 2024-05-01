@@ -1,7 +1,8 @@
 const CalorieGoal = require('./CalorieGoal');
+const UserRecipes = require('./UserRecipes');
 const Recipes = require('./Recipes');
 const User = require('./User');
-const UserRecipes = require('./UserRecipes');
+
 
 User.hasOne(CalorieGoal, {
     foreignKey: 'user_id',
@@ -18,13 +19,13 @@ UserRecipes.belongsTo(User, {
     foreignKey: 'user_id',
 });
 CalorieGoal.hasMany(Recipes, {
-    foreignKey: 'calorieGoal_id',
+    foreignKey: 'calorie_Goal_id',
+    onDelete: 'CASCADE'
+    
 });
 Recipes.belongsTo(CalorieGoal, {
-    foreignKey: 'calorieGoal_id',
+    foreignKey: 'calorie_Goal_id',
 });
-
-
 
 
 

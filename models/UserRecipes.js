@@ -26,6 +26,13 @@ UserRecipes.init(
                 key: 'id',
             },
         }
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: false,
+        underscored: true,
+        modelName: 'userRecipes',
     }
 );
 
