@@ -11,4 +11,15 @@ router.post('/', async (req, res) => {
     }
   });
 
+
+  router.get('/', async (req, res) => {
+    try {
+        const recipeData = await UserRecipes.findAll();
+
+        res.status(200).json(recipeData);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+  });
+
 module.exports = router;
