@@ -40,7 +40,7 @@ User.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        //storing gender as an "isMale" boolean because I can't think of another way to do it
+        //storing gender a string
         isMale: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -53,7 +53,7 @@ User.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        //activity level will be an array of options from sedentary lifestyle to pro athlete
+        //
         //the api wants it in the form of 
         //‘level _ 1’ : “Sedentary: little or no exercise”,
         // ‘level _ 2’ : “Exercise 1-3 times/week”,

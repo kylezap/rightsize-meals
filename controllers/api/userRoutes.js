@@ -58,7 +58,30 @@ router.post('/', async (req, res) => {
     }
   });
 
-
+// router.get('/:id', async (req, res) =>{
+//   try {
+//     const dbUserData = await User.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: [
+//             'name',
+//             'email',
+//             'password',
+//             'userAge',
+//             'isMale',
+//             'userWeight',
+//             'userHeight',
+//             'userAct',
+//           ],
+//         },
+//       ],
+//     });
+//     res.json(dbUserData);
+//   } catch (error) {
+//     res.status(500).json(error);
+//   }
+// })
 
 
 module.exports = router;
