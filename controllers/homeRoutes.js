@@ -80,6 +80,19 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });         
 
+router.get('/recipes', async (req, res) => {
+  try {
+    const recipeData = await Recipes.findAll();
+    const recipes = recipeData.map((recipe) => recipe.get({plain:true}));
+    res.render('recipes', {
+      logged_in: req.session.logged_in,
+      recipes: recipes
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // router.get('/recipes/:id', async (req, res) => {
 //   try {
 //       const recipeData = await Recipes.getByPk({
