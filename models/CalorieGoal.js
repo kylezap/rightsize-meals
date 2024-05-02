@@ -11,7 +11,7 @@ CalorieGoal.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        dailyCal: {
+        daily_cal: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
