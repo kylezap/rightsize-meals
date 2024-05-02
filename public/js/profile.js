@@ -39,6 +39,8 @@ const newFormHandler = async (event) => {
     }  else {
     alert("Some validation failed");
   }
+
+  document.location.replace('/profile');
 }
   //   if (response.ok) {
   //     document.location.replace('/profile');
