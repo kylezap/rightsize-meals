@@ -6,7 +6,7 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     res.render('homepage', {
-      logged_in: req.session.logged_in 
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 router.get('/form', async (req, res) => {
   try {
     res.render('form', {
-      logged_in: req.session.logged_in 
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -36,24 +36,24 @@ router.get('/form', async (req, res) => {
 //   }
 // });
 
-router.get('/profile', withAuth, async (req, res) => {
-  try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      
-    });
+// router.get('/profile', withAuth, async (req, res) => {
+//   try {
+//     // Find the logged in user based on the session ID
+//     const userData = await User.findByPk(req.session.user_id, {
+//       attributes: { exclude: ['password'] },
 
-    const user = userData.get({ plain: true });
+//     });
 
-    res.render('profile', {
-      ...user,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     const user = userData.get({ plain: true });
+
+//     res.render('profile', {
+//       ...user,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
@@ -72,10 +72,14 @@ router.get('/profile', async (req, res) => {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
     });
-    const calData = await CalorieGoal.findByPk(req.session.user_id)
-   
-    const cal = calData.get({plain: true});
 
+    console.log('user_data', userData);
+
+    const calData = await CalorieGoal.findOne({ where: { user_id: req.session.user_id } });
+    console.log('CalcData', calData);
+
+    const cal = calData.get({ plain: true });
+    console.log(cal);
     const user = userData.get({ plain: true });
 
     console.log(user);
@@ -83,18 +87,20 @@ router.get('/profile', async (req, res) => {
 
     res.render('profile', {
       user,
-      logged_in: req.session.logged_in,
       cal,
+      logged_in: req.session.logged_in,
+
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
-});         
+});
 
 router.get('/recipes', async (req, res) => {
   try {
     const recipeData = await Recipes.findAll();
-    const recipes = recipeData.map((recipe) => recipe.get({plain:true}));
+    const recipes = recipeData.map((recipe) => recipe.get({ plain: true }));
     res.render('recipes', {
       logged_in: req.session.logged_in,
       recipes: recipes
@@ -113,7 +119,7 @@ router.get('/getcal', async (req, res) => {
     method: 'GET',
     headers: {
       'X-RapidAPI-Key': '2776c6113fmshd4ff5eb1a349755p107a83jsnf157c1db2717',
-		'X-RapidAPI-Host': 'fitness-calculator.p.rapidapi.com'
+      'X-RapidAPI-Host': 'fitness-calculator.p.rapidapi.com'
     }
   };
   try {
