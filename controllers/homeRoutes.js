@@ -72,14 +72,19 @@ router.get('/profile', async (req, res) => {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
     });
+    const calData = await CalorieGoal.findByPk(req.session.user_id)
+   
+    const cal = calData.get({plain: true});
 
     const user = userData.get({ plain: true });
 
     console.log(user);
+    console.log(cal);
 
     res.render('profile', {
-      ...user,
-      logged_in: req.session.logged_in
+      user,
+      logged_in: req.session.logged_in,
+      cal,
     });
   } catch (err) {
     res.status(500).json(err);

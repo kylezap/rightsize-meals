@@ -87,9 +87,9 @@ const newFormHandler = async (event) => {
 //   }
 // };
 
-document
-  .querySelector('#new-user-submit')
-  .addEventListener('submit', newFormHandler);
+// document
+//   .querySelector('#new-user-submit')
+//   .addEventListener('submit', newFormHandler);
 
 // document
 //   .querySelector('.project-list')
