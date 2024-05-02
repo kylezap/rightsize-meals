@@ -46,12 +46,11 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        {{#if logged_in}}
+                         {{#if logged_in}}
                         <a class="button is-light" href="/logout">
                             Logout
                         </a>
-                        {{/if}}
-                        {{#else}}
+                        {{else}}
                         
                         <a class="button is-primary" href="/form">
                             <strong>Sign up</strong>
@@ -59,7 +58,7 @@
                         <a class="button is-light" href="/login">
                             Log in
                         </a>
-                        {{/else}}
+                      {{/if}} 
                     </div>
                 </div>
             </div>
