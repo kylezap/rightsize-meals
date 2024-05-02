@@ -1,0 +1,26 @@
+<div class="columns">
+{{#each recipes as |recipe| }}
+<div></div>
+<div class="card is-medium">
+  <div class="card-image">
+    <figure class="image is-4-3 is 200x400">
+      <img
+        src={{recipe.imgUrl}}
+        alt="Placeholder image"
+        href={{recipe.url}}
+      />
+    </figure>
+  </div>
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+      </div>
+      <div class="media-content">
+        <p class="title is-4">{{recipe.name}}</p>
+        <p class="subtitle is-6">Cooktime: {{recipe.cookTime}} minutes</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{{/each}}

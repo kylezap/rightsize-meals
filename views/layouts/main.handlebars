@@ -37,6 +37,10 @@
                 <a class="navbar-item" href="/profile">
                     Profile
                 </a>
+
+                <a class="navbar-item" href="/recipes">
+                    Recipes
+                </a>
             </div>
 
             <div class="navbar-end">
@@ -72,7 +76,9 @@
 </main>
 <script src="./js/profile.js"></script>
 <script src="./js/login.js"></script>
-<script src="./js/logout.js"></script>
+{{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
