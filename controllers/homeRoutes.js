@@ -22,6 +22,10 @@ router.get('/form', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
+
+
 // router.get('/profile', async (req, res) => {
 //   try {
 //     res.render('profile', {
@@ -44,7 +48,7 @@ router.get('/profile', withAuth, async (req, res) => {
 
     res.render('profile', {
       ...user,
-      logged_in: true
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -62,7 +66,7 @@ router.get('/login', (req, res) => {
 });
 
 
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/profile', async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
@@ -71,9 +75,11 @@ router.get('/profile', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
+    console.log(user);
+
     res.render('profile', {
       ...user,
-      logged_in: true
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -92,6 +98,27 @@ router.get('/recipes', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
+
+// temp route for cal api
+router.get('/getcal', async (req, res) => {
+  const url = `https://fitness-calculator.p.rapidapi.com/dailycalorie?age=${age}&gender=${gender}&height=${height}&weight=${weight}&activitylevel=${actLevel}`;
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': '2776c6113fmshd4ff5eb1a349755p107a83jsnf157c1db2717',
+		'X-RapidAPI-Host': 'fitness-calculator.p.rapidapi.com'
+    }
+  };
+  try {
+    const response = await fetch(url, options);
+    const result = await response.text();
+    console.log(result);
+  } catch (error) {
+    console.error(error);
+  }
+})
 
 // router.get('/recipes/:id', async (req, res) => {
 //   try {
