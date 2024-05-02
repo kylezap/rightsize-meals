@@ -12,7 +12,7 @@ CalorieGoal.init(
             autoIncrement: true,
         },
         daily_cal: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.DECIMAL,
             allowNull: false
         },
         user_id: {
