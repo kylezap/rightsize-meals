@@ -80,4 +80,27 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });         
 
+// router.get('/recipes/:id', async (req, res) => {
+//   try {
+//       const recipeData = await Recipes.getByPk({
+//           where: {
+//               id: req.params.id
+//           },
+//       });
+
+//       if (!recipeData) {
+//           res.status(404).json({ message: "no recipe found with this id!" });
+//           return;
+//       }
+
+//       res.status(200).json(recipeData);
+//   } catch (error) {
+//       res.status(500).json(error);
+//   }
+// });
+
+
+
+
+
 module.exports = router;
