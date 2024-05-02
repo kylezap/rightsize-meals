@@ -12,32 +12,41 @@ const newFormHandler = async (event) => {
 
   // let userFormInput = [name, email , password , age , gender , height , weight,exerciseLevel ]
 
-  console.log(`Name: ${name}, Email: ${email}, ${password}, Age: ${age}, Gender: ${gender}, Height: ${height}, Weight: ${weight} Level ${exerciseLevel}`);
+  console.log(`Name: ${name}, Email: ${email}, ${password}, Age: ${age}, Gender: ${gender}, Height: ${height}, Weight: ${weight} Level ${exerciseLevel}`)
+  let userInfo = {
+    name: name, 
+    email: email, 
+    password: password , 
+    userAge: age , 
+    isMale: gender , 
+    userHeight: height , 
+    userWeight: weight, 
+    userAct: exerciseLevel
+  }
 
   if (name && email && password && age && gender && height && weight && exerciseLevel) {
     
     console.log("You clicked me!");
     const response = await fetch(`/api/users`, {
       method: 'POST',
-      body: JSON.stringify({ name, email ,password , age , gender , height , weight,exerciseLevel }),
+      body: JSON.stringify(userInfo),
       headers: {
         'Content-Type': 'application/json',
-      },
-    }).then(function(response){
-      console.log(response);
-    });
-  }
-  else {
+      }
+    })
+    const data = await response.json();
+    console.log(data);
+    }  else {
     alert("Some validation failed");
   }
-
+}
   //   if (response.ok) {
   //     document.location.replace('/profile');
   //   } else {
   //     alert('Incorrect entry, please make sure to fill out all items');
   //   }
   // }
-};
+
 
 // const delButtonHandler = async (event) => {
 //   if (event.target.hasAttribute('data-id')) {
