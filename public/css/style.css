@@ -23,3 +23,21 @@
   background-position: center;
   border-radius: 10px;
 }
+
+#fruitstand-img {
+  height: 500px;
+  margin: 25px;
+  background-image: url("/images/fruitstand.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+#salad-img {
+  height: 500px;
+  margin: 25px;
+  background-image: url("/images/salad.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
