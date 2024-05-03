@@ -2,15 +2,15 @@ const { CalorieGoal } = require('../models');
 
 const calorieData = [
     {
-        "dailyCal":2406,
+        "daily_cal":2406,
         "user_id":1
       },
       {
-        "dailyCal":3159,
+        "daily_cal":3159,
         "user_id":2
       },
       {
-        "dailyCal":2384,
+        "daily_cal":2384,
         "user_id":3
       },
 ];
