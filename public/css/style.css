@@ -14,3 +14,12 @@
 #hero-subtitle {
   font-size: 2rem;
 }
+
+#cutting-board-img {
+  height: 500px;
+  margin: 25px;
+  background-image: url("/images/cutting-board.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
