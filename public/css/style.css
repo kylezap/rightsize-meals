@@ -1,24 +1,43 @@
-header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
+#homepage {
+  height: 600px;
+  width: 100%;
+  margin-bottom: 25px;
+  background-image: url("/images/fork-measure.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-.no-button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  color: #1b89bc;
-  text-decoration: none;
-  font-size: 100%;
+#hero-title {
+  font-size: 5rem;
 }
 
-.no-button:hover {
-  color: #065b83;
-  text-decoration: underline;
+#hero-subtitle {
+  font-size: 2rem;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
+#cutting-board-img {
+  height: 500px;
+  margin: 25px;
+  background-image: url("/images/cutting-board.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+#fruitstand-img {
+  height: 500px;
+  margin: 25px;
+  background-image: url("/images/fruitstand.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+#salad-img {
+  height: 500px;
+  margin: 25px;
+  background-image: url("/images/salad.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
 }
