@@ -118,7 +118,7 @@ router.get('/getcal', async (req, res) => {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '2776c6113fmshd4ff5eb1a349755p107a83jsnf157c1db2717',
+      'X-RapidAPI-Key': process.env.API_KEY,
       'X-RapidAPI-Host': 'fitness-calculator.p.rapidapi.com'
     }
   };
@@ -130,28 +130,5 @@ router.get('/getcal', async (req, res) => {
     console.error(error);
   }
 })
-
-// router.get('/recipes/:id', async (req, res) => {
-//   try {
-//       const recipeData = await Recipes.getByPk({
-//           where: {
-//               id: req.params.id
-//           },
-//       });
-
-//       if (!recipeData) {
-//           res.status(404).json({ message: "no recipe found with this id!" });
-//           return;
-//       }
-
-//       res.status(200).json(recipeData);
-//   } catch (error) {
-//       res.status(500).json(error);
-//   }
-// });
-
-
-
-
 
 module.exports = router;
