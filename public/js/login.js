@@ -9,6 +9,7 @@ const loginFormHandler = async (event) => {
     email: email,
     password: password
   }
+  console.log(loginData);
 
   if (loginData) {
     // Send a POST request to the API endpoint

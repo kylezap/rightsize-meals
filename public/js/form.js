@@ -27,47 +27,48 @@ const newFormHandler = async (event) => {
     if (name && email && password && age && gender && height && weight && exerciseLevel) {
       
       console.log("You clicked me!");
-      const response = await fetch(`/api/users`, {
+      fetch(`/api/users`, {
         method: 'POST',
         body: JSON.stringify(userInfo),
         headers: {
           'Content-Type': 'application/json',
         }
       })
-      const data = await response.json();
-      console.log(data);
+      // console.log(response);
+      // const data = await response.json();
+      // console.log(data);
   
-      const url = `https://fitness-calculator.p.rapidapi.com/dailycalorie?age=${userInfo.userAge}&gender=${userInfo.isMale}&height=${userInfo.userHeight}&weight=${userInfo.userWeight}&activitylevel=${userInfo.userAct}`;
-      const options = {
-        method: 'GET',
-        headers: {
-          'X-RapidAPI-Key': '2776c6113fmshd4ff5eb1a349755p107a83jsnf157c1db2717',
-          'X-RapidAPI-Host': 'fitness-calculator.p.rapidapi.com'
-        }
-      };
-      try {
-        const response = await fetch(url, options);
-        const result = await response.text();
-        console.log(result);
-      } catch (error) {
-        console.error(error);
-      }
+      // const url = `https://fitness-calculator.p.rapidapi.com/dailycalorie?age=${userInfo.userAge}&gender=${userInfo.isMale}&height=${userInfo.userHeight}&weight=${userInfo.userWeight}&activitylevel=${userInfo.userAct}`;
+      // console.log(url);
+      // const options = {
+      //   method: 'GET',
+      //   headers: {
+      //     'X-RapidAPI-Key': '2776c6113fmshd4ff5eb1a349755p107a83jsnf157c1db2717',
+      //     'X-RapidAPI-Host': 'fitness-calculator.p.rapidapi.com'
+      //   }
+      // };
+      // try {
+      //   const response = await fetch(url, options);
+      //   const result = await response.text();
+      //   console.log(result);
+      // } catch (error) {
+      //   console.error(error);
+      // }
   
   
   
   
   
-      }  else {
-      alert("Some validation failed");
+      // }  else {
+      // alert("Some validation failed");
     }
   
     // document.location.replace('/profile');
+    // }
+        document.location.replace('/profile');
+      
   }
-    //   if (response.ok) {
-    //     document.location.replace('/profile');
-    //   } else {
-    //     alert('Incorrect entry, please make sure to fill out all items');
-    //   }
+      
     // }
   
   

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RightSize Meals</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/images/logo.svg">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -36,9 +36,9 @@
                     Home
                 </a>
 
-                <a class="navbar-item" href="/profile">
+                {{!-- <a class="navbar-item" href="/profile">
                     Profile
-                </a>
+                </a> --}}
 
                 <a class="navbar-item" href="/recipes">
                     Recipes
@@ -49,6 +49,9 @@
                 <div class="navbar-item">
                     <div class="buttons">
                          {{#if logged_in}}
+                        <a class="button is-primary" href="/profile">
+                        Profile
+                        </a> 
                         <a class="button is-light" href="/" id="logout">
                             Logout
                         </a>
@@ -74,9 +77,7 @@
             <p>
                 <strong>RightSize Meals</strong> by Sam, Donovan, and Kyle</a>.
                 The source code is licensed
-                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The
-                website content is licensed
-                <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
             </p>
         </div>
     </footer>

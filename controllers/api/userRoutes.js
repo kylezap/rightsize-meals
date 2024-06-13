@@ -4,10 +4,7 @@ const { User, CalorieGoal } = require('../../models');
 router.post('/', async (req, res) => {
   try {
 
-    //console.log(req.body);
-
-
-
+    console.log(req.body);
     // Save the data from API and user Input
     const userData = await User.create(req.body);
 
@@ -62,7 +59,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    const validPassword = await userData.checkPassword(req.body.password);
+    const validPassword = userData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res
@@ -95,30 +92,30 @@ router.post('/logout', (req, res) => {
 });
 
 
-// router.get('/:id', async (req, res) =>{
-//   try {
-//     const dbUserData = await User.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: [
-//             'name',
-//             'email',
-//             'password',
-//             'userAge',
-//             'isMale',
-//             'userWeight',
-//             'userHeight',
-//             'userAct',
-//           ],
-//         },
-//       ],
-//     });
-//     res.json(dbUserData);
-//   } catch (error) {
-//     res.status(500).json(error);
-//   }
-// })
+router.get('/:id', async (req, res) =>{
+  try {
+    const dbUserData = await User.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: [
+            'name',
+            'email',
+            'password',
+            'userAge',
+            'isMale',
+            'userWeight',
+            'userHeight',
+            'userAct',
+          ],
+        },
+      ],
+    });
+    res.json(dbUserData);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+})
 
 
 module.exports = router;
