@@ -39,19 +39,23 @@ User.init(
         userAge: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            field: 'user_age', // specify the exact column name in the database
         },
         //storing gender a string
         isMale: {
             type: DataTypes.STRING,
             allowNull: false,
+            field: 'is_male', // specify the exact column name in the database
         },
         userWeight: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            field: 'user_weight', // specify the exact column name in the database
         },
         userHeight: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            field: 'user_height', // specify the exact column name in the database
         },
         //
         //the api wants it in the form of 
@@ -64,6 +68,7 @@ User.init(
         userAct: {
             type: DataTypes.STRING,
             allowNull: false,
+            field: 'user_act', // specify the exact column name in the database
         },
         
     }, 
